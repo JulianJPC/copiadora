@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>{httpStatus} - {httpStatus_desc}</title>
+        <style type="text/css">
+            body {
+                background: #aec2ea;
+                color: white;
+                font-family: verdana;
+            }
+            div.title {
+                padding: 0.5em;
+                border: 3px solid #050a14;
+                border-radius: 0.3em;
+                background: #142952;
+                font-size: 2em;
+            }
+            div.content {
+                width: 80%;                
+                border: 2px solid #0d0d0d;
+                background:  #cccccc;
+                color: black;
+                padding: 1em;                
+                font-size: 1em;
+                margin: auto;                
+                word-break: break-all !important;
+                word-wrap: break-word !important;
+            }            
+            div.footer{ 
+                text-align: center;
+                color: black;
+                font-weight: bold;
+                margin: auto;                
+                font-size: 0.8em;
+                padding: 1em;
+                margin-top: 5em;
+            }            
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            {httpStatus} - {httpStatus_desc}
+        </div>
+        <hr>
+        <div class="content">
+            {error}
+        </div>
+        <div class="footer">
+            <span>Powered by: KaijuSoftware S.A. - 2017</span>
+        </div>
+    </body>
+</html>
