@@ -1,18 +1,18 @@
-copiadoraApp.service('copyService', ['$http', 
-    function ($http) {
-        this.uploadFileToUrl = function(file, uploadUrl){
-            var fd = new FormData();
-            fd.append('file', file);
-            
-            $http.post(uploadUrl, fd, {
-                transformRequest: angular.identity,
-                headers: {'Content-Type': undefined}
-            })
-            
-            .success(function(){
-            })
-            
-            .error(function(){
-            });
-        }
- }]);
+ var copyWebServiceURL = "";
+
+copiadoraApp.factory('copyService', ['$http', '$rootScope', '$location',
+function($http, $rootScope, $location){
+    var service = {};
+
+    service.file = function(file, callback){
+        var url = copyfileURL;
+        $http.post(url, file).
+        success(function(response){
+            callback(response);
+        }).error(function(response){
+            callback(response);
+        });
+    };
+
+    return service;
+}]);
