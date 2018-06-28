@@ -1,20 +1,23 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-9">
             <div class="container">
                 <div class="row">
-                    Last inital block - First inital block have to be less than 50.
+                    <div class="col-sm-12">
+                        Counter introduce:<input type="text" ng-model="counter" ng-change="countingCounter()">
+                    </div>
                 </div>
                 <div class="row">
-                    Set initial block of first 50:<input type="text" ng-model="startnumber">
-                </div>
-                <div class="row">
-                    Set last block of first 50:<input type="text" ng-model="endnumber">
+                    <div class="col-sm-6">
+                            First Block: <input type="text" ng-model="startnumber" disabled>
+                    </div>
+                    <div class="col-sm-6">
+                            Last Block:  <input type="text" ng-model="endnumber" disabled>
+                    </div>       
                 </div>
 
                 Block it will stop:<input type="text" ng-model="endloop">
 
-                <button type="button" class="btn btn-primary" ng-click="countingCounter()">Calculate counter for querry : {{counter}}</button>
                 <input type="checkbox" ng-model="keyLooper"> Looper<br>
 
                 <div class="row">
