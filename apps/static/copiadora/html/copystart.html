@@ -3,29 +3,40 @@
         <div class="col-sm-6">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <input type ="file" file-model = "myFile"/>
-                        <button type="button" class="btn btn-primary" ng-click="uploadFile()">Read</button>
-                    </div>
+                    Last inital block - First inital block have to be less than 50.
                 </div>
                 <div class="row">
-                    <div class="container">
-                        <ul>
-                            <li ng-repeat="x in songs">
-                                {{songs[$index]}}
-                            </li>
-                        </ul>
-                    </div>
+                    Set initial block of first 50:<input type="text" ng-model="startnumber">
                 </div>
-            </div>               
-        </div>
+                <div class="row">
+                    Set last block of first 50:<input type="text" ng-model="endnumber">
+                </div>
 
-        <div class="col-sm-6">
-            <div class="container">
+                Block it will stop:<input type="text" ng-model="endloop">
+
+                <button type="button" class="btn btn-primary" ng-click="countingCounter()">Calculate counter for querry : {{counter}}</button>
+                <input type="checkbox" ng-model="keyLooper"> Looper<br>
+
                 <div class="row">
-                    <a href="fullSongs" download="fullSongs.filetype"> <button type="button" class="btn btn-primary">make copy file</button> </a>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="getData()" ng-disabled="offbutton || (endnumber - startnumber) > 50 
+                            || endnumber == null || startnumber == null || (endnumber - startnumber) < 0" >Read Blocks</button>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="evalTime(AllBlocks)">Evaluar tiempo</button>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="watchblocks()">See array</button>
+                    </div>
                 </div>
-            </div>
+
+                <span ng-show="error">Error CORS</span>
+
+                
+
+            </div>               
         </div>
     </div>
 </div>
